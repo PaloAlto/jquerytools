@@ -240,7 +240,7 @@
 		}); 
 		
 		// open initial tab
-		if (location.hash && conf.tabs === "a" && root.find(conf.tabs + location.hash).length) {
+		if (location.hash && /^#[\w-]+$/i.test(location.hash) && conf.tabs === "a" && root.find(conf.tabs + location.hash).length) {
 			self.click(location.hash);
 		} else {
 			if (conf.initialIndex === 0 || conf.initialIndex > 0) {
